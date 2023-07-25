@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class RememberMe extends JFrame{
-	//chk
+	//chk2
     RememberMe() {
         setTitle("RememberMe"); // 프레임 이름
         setSize(300,400); // 프레임 사이즈 설정
