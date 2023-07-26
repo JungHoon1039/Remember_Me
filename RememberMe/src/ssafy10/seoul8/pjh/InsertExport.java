@@ -10,54 +10,54 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import ssafy10.seoul8.pjh.Custom.ml;
-
-public class RememberMe {
+public class InsertExport {
     public static void main(String[] args) {
-        StartRememberMe rememberme = new StartRememberMe();
+        Custom c = new Custom();
     }
 }
 
-class StartRememberMe extends JFrame {
+class Custom extends JFrame {
     private JTextField field;
-    private JLabel insert, result;
+    private JLabel label, label2;
     private JPanel panel;
     private JButton button, button2;
     private ArrayList<String> list = new ArrayList<>();
     String text;
-    private ActionListener action = new action();
-    class action implements ActionListener {
+    private ActionListener ml = new ml();
+    class ml implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == button) {
                 text = String.valueOf(field.getText());
-                result.setText(text);
+                list.add(text);
+            } else if (e.getSource() == button2) {
+                for (String c : list)
+                    label2.setText(list.toString());
             }
         }
 
     }
     
-    public StartRememberMe() {
-        this.setTitle("RememberMe");
+    public Custom() {
+        this.setTitle("RememberMe2");
         this.setSize(300, 400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         field = new JTextField(5);
-        insert = new JLabel("인원 수를 입력하세요!");
-        result = new JLabel("0명");
+        label = new JLabel("입력확인");
+        label2 = new JLabel("출력확인");
         panel = new JPanel();
         button = new JButton("입력");
+        button2 = new JButton("출력");
         field.setText("");
-        button.addActionListener(action);
-        panel.add(insert);
+        button.addActionListener(ml);
+        button2.addActionListener(ml);
+        panel.add(label);
         panel.add(field);
         panel.add(button);
-        panel.add(result);
+        panel.add(button2);
+        panel.add(label2);
         
-        JLabel test = new JLabel("확인용");
-        JPanel chk = new JPanel();
-        chk.add(test);
         this.add(panel);
-        this.add(chk);
         this.setVisible(true);
     }
 }

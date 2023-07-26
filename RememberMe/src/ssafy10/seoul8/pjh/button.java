@@ -30,7 +30,7 @@ class RememberMe2 extends JFrame {
     
     
 }
-public class RememberMeEx {
+public class button {
     public static void main(String[] args) {
         new RememberMe2();
     }
