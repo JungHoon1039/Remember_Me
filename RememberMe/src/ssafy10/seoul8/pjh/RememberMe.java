@@ -53,11 +53,9 @@ class StartRememberMe extends JFrame {
         // 자식 컴포넌트
         insert = new JLabel("인원 수를 입력하세요!");
         panel1 = new JPanel();
-        // 테이블 형식 - 행, 열, 가로여백, 세로여백
-        panel1.setLayout(new GridLayout(3, 3, 0, 0));
         panel1.add(insert);
         // 가로위치, 세로위치, 가로길이, 세로길이
-        panel1.setBounds(0, 0, 300, 300);
+        panel1.setBounds(175, 25, 150, 50);
         
         field = new JTextField(5);
         field.setText("");
