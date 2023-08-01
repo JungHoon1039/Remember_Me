@@ -30,11 +30,11 @@ public class namePage extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == button) {
-                if (cnt <= startPage.member) {
+                if (cnt <= memberPage.member) {
                     text = String.valueOf(field.getText());
                     memberMap.put(text, 0);
                     result.setText("플레이어 " + cnt++ + " 등록 완료");
-                    if (cnt <= startPage.member) {
+                    if (cnt <= memberPage.member) {
                         insert.setText("플레이어 " + cnt + " 이름을 입력하세요");
                     } else {
                         insert.setText("모든 플레이어 등록 완료");
@@ -43,7 +43,7 @@ public class namePage extends JFrame {
                     result.setText("모든 플레이어가 등록 되었습니다");
                 }
             } else if (e.getSource() == next) {
-                if (memberMap.size() == startPage.member) {
+                if (memberMap.size() == memberPage.member) {
                     questionPage rememberme = new questionPage();
                 } else {
                     result.setText("등록 되지 않은 플레이어가 있습니다");
@@ -53,7 +53,6 @@ public class namePage extends JFrame {
     }
 
     public namePage() {
-        // 레이아웃
         GridBagConstraints[] gbc = new GridBagConstraints[5]; // 컴포넌트
         GridBagLayout gbl = new GridBagLayout();
         panel = new JPanel();

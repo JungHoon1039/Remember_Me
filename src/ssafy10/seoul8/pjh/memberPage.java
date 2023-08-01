@@ -4,8 +4,6 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,15 +11,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class questionPage extends JFrame {
-    static Map<String, String> questionMap = new HashMap<>();
+public class memberPage extends JFrame {
+    static int member = 0;
     private JTextField field;
     private JLabel insert, result;
     private JPanel panel;
     private JButton button, next;
     JFrame frm = startPage.frm;
     String text;
-    private int cnt = 0;
 
     // event 등록하는 함수
     private ActionListener action = new action();
@@ -31,20 +28,30 @@ public class questionPage extends JFrame {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == button) {
                 text = String.valueOf(field.getText());
-                questionMap.put(text, answerCrawling.searchGoogle(text));
-                result.setText("문제 개수 : " + ++cnt + "개");
+                if (text.equals("1") || text.equals("2") || text.equals("3") || text.equals("4") || text.equals("5")) {
+                    result.setText("현재 참여 인원 : " + text + "명");
+                    member = Integer.parseInt(text);
+                } else {
+                    result.setText("1~5 만 입력 가능합니다");
+                }
+            } else if (e.getSource() == next) {
+                if (member != 0) {
+                    namePage rememberme = new namePage();
+                } else {
+                    result.setText("한명 이상 등록 해 주세요");
+                }
             }
         }
     }
 
-    public questionPage() {
+    public memberPage() {
         GridBagConstraints[] gbc = new GridBagConstraints[5]; // 컴포넌트
         GridBagLayout gbl = new GridBagLayout();
         panel = new JPanel();
         panel.setLayout(gbl);
 
         // 자식 컴포넌트
-        insert = new JLabel("단어를 입력하세요");
+        insert = new JLabel("인원 수를 입력하세요");
         gbc[0] = new GridBagConstraints();
         gbc[0].gridx = 0;
         gbc[0].gridy = 0;
@@ -65,7 +72,7 @@ public class questionPage extends JFrame {
         gbc[2].gridy = 1;
         panel.add(button, gbc[2]);
 
-        result = new JLabel("문제 개수 : 0개");
+        result = new JLabel("현재 참여 인원 : 0명");
         gbc[3] = new GridBagConstraints();
         gbc[3].gridx = 0;
         gbc[3].gridy = 2;
