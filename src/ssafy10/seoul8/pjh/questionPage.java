@@ -31,8 +31,18 @@ public class questionPage extends JFrame {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == button) {
                 text = String.valueOf(field.getText());
-                questionMap.put(text, answerCrawling.searchGoogle(text));
-                result.setText("문제 개수 : " + ++cnt + "개");
+                if (questionMap.containsKey(text)) {
+                    result.setText("동일한 이름은 입력 불가");
+                } else {
+                    questionMap.put(text, answerCrawling.searchGoogle(text));
+                    result.setText("문제 개수 : " + ++cnt + "개");
+                }
+            } else if (e.getSource() == next) {
+                if (cnt != 0) {
+                    quizPage rememberme = new quizPage();
+                } else {
+                    result.setText("문제가 0개 입니다");
+                }
             }
         }
     }

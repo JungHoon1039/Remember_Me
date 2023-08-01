@@ -32,12 +32,16 @@ public class namePage extends JFrame {
             if (e.getSource() == button) {
                 if (cnt <= memberPage.member) {
                     text = String.valueOf(field.getText());
-                    memberMap.put(text, 0);
-                    result.setText("플레이어 " + cnt++ + " 등록 완료");
-                    if (cnt <= memberPage.member) {
-                        insert.setText("플레이어 " + cnt + " 이름을 입력하세요");
+                    if (memberMap.containsKey(text)) {
+                        result.setText("동일한 이름은 입력 불가");
                     } else {
-                        insert.setText("모든 플레이어 등록 완료");
+                        memberMap.put(text, 0);
+                        result.setText("플레이어 " + cnt++ + " 등록 완료");
+                        if (cnt <= memberPage.member) {
+                            insert.setText("플레이어 " + cnt + " 이름을 입력하세요");
+                        } else {
+                            insert.setText("모든 플레이어 등록 완료");
+                        }
                     }
                 } else {
                     result.setText("모든 플레이어가 등록 되었습니다");

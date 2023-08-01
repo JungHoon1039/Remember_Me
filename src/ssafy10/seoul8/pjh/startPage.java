@@ -9,14 +9,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class startPage extends JFrame {
-    static int member = 0;
-    private JTextField field;
-    private JLabel insert, result;
+    private JLabel insert;
     private JPanel panel;
-    private JButton button, next;
+    private JButton next;
     static JFrame frm;
     String text;
 
