@@ -36,7 +36,7 @@ public class memberPage extends JFrame {
                 }
             } else if (e.getSource() == next) {
                 if (member != 0) {
-                    namePage rememberme = new namePage();
+                    new namePage();
                 } else {
                     result.setText("한명 이상 등록 해 주세요");
                 }

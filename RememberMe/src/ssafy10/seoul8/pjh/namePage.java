@@ -48,7 +48,7 @@ public class namePage extends JFrame {
                 }
             } else if (e.getSource() == next) {
                 if (memberMap.size() == memberPage.member) {
-                    questionPage rememberme = new questionPage();
+                    new questionPage();
                 } else {
                     result.setText("등록 되지 않은 플레이어가 있습니다");
                 }

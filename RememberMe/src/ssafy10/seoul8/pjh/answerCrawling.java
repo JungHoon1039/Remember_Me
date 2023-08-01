@@ -6,7 +6,6 @@ import org.jsoup.select.Elements;
 
 public class answerCrawling {
     public static String searchGoogle(String word) {
-        // 중앙정보처리학원 웹페이지의 공지사항 제목만 크롤링해서 파일에 저장하기
         String answer = null;
         try {
             String URL = "https://www.google.com/search?q=" + word;
@@ -21,7 +20,6 @@ public class answerCrawling {
             System.out.println("크롤링 실패 : " + e);
             e.printStackTrace();
         }
-        System.out.println(answer);
         return answer;
     }
 }
