@@ -27,7 +27,7 @@ public class quizPage extends JFrame {
     private String member, question, search; // 문제를 풀 플레이어, 현재 문제, 현재 문제의 정답
     private Map<String, Integer> memberMap = namePage.memberMap; // 플레이어 Map 정보
     private Map<String, String> questionMap = questionPage.questionMap; // 문제 Map 정보
-    private LinkedList<String> memberList = randomQuiz.randomMember(memberMap, questionMap); // 플레이어 Map을 List화로 변환 하여 사용
+    private LinkedList<String> memberList = randomQuiz.randomMember(memberMap, questionMap); // 플레이어 Map을 List로 변환 하여 사용
     private LinkedList<String> questionList = randomQuiz.randomQuestion(questionMap); // 문제 Map을 List로 변환 하여 사용
 
     // 버튼 event 등록

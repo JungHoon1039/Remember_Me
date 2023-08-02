@@ -12,7 +12,7 @@ public class answerCrawling {
     public static String searchGoogle(String word) {
         String answer = null; // 리턴값 초기화
         try {
-            String URL = "https://www.google.com/search?q=" + word; // 구글에서 입력갑을 검색한 URL 설정
+            String URL = "https://www.google.com/search?q=" + word; // 구글에서 입력값을 검색한 URL 설정
             Document doc = Jsoup.connect(URL).get(); // URL document를 가져와서
             // css 선택자로 검색 결과를 찾음
             Elements elements = doc.select("#kp-wp-tab-overview > div.TzHB6b.cLjAic.LMRCfc > div > div > div > div > div > div > div:nth-child(1) > div > div > div > span:nth-child(2)");
