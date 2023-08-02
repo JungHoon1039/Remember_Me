@@ -12,12 +12,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class memberPage extends JFrame {
+    private JFrame frm = RememberMe.frm;
     public static int member = 0;
     private JTextField field;
     private JLabel insert, result;
     private JPanel panel;
     private JButton button, next;
-    private JFrame frm = RememberMe.frm;
     private String text;
 
     // event 등록하는 함수
@@ -90,5 +90,4 @@ public class memberPage extends JFrame {
         frm.setContentPane(panel);
         frm.setVisible(true);
     }
-
 }

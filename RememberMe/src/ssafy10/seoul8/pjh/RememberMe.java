@@ -3,7 +3,7 @@ package ssafy10.seoul8.pjh;
 import javax.swing.JFrame;
 
 public class RememberMe extends JFrame {
-    static JFrame frm;
+    public static JFrame frm;
 
     public static void main(String[] args) {
         // 부모 프레임 생성
@@ -18,5 +18,4 @@ public class RememberMe extends JFrame {
         frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         new startPage(); // 리맴버미 실행
     }
-
 }

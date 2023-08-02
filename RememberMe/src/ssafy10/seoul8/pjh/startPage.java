@@ -11,7 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class startPage extends JFrame {
-    JFrame frm = RememberMe.frm;
+    private JFrame frm = RememberMe.frm;
     private JLabel insert;
     private JPanel panel;
     private JButton next;
@@ -51,5 +51,4 @@ public class startPage extends JFrame {
         frm.setContentPane(panel);
         frm.setVisible(true);
     }
-
 }

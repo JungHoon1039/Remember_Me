@@ -14,12 +14,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class questionPage extends JFrame {
+    private JFrame frm = RememberMe.frm;
     public static Map<String, String> questionMap = new HashMap<>();
     private JTextField field;
     private JLabel insert, result;
     private JPanel panel;
     private JButton button, next;
-    private JFrame frm = RememberMe.frm;
     private String text;
     private int cnt = 0;
 
@@ -93,5 +93,4 @@ public class questionPage extends JFrame {
         frm.setContentPane(panel);
         frm.setVisible(true);
     }
-
 }

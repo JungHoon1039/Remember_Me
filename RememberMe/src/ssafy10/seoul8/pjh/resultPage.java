@@ -12,9 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class resultPage extends JFrame {
+    private JFrame frm = RememberMe.frm;
     private JLabel result;
     private JPanel panel;
-    private JFrame frm = RememberMe.frm;
     private Map<String, Integer> memberMap = namePage.memberMap;
 
     public resultPage() {
@@ -44,5 +44,4 @@ public class resultPage extends JFrame {
         frm.setContentPane(panel);
         frm.setVisible(true);
     }
-
 }
