@@ -4,12 +4,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.LinkedList;
 import java.util.Map;
-import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -24,10 +20,8 @@ public class quizPage extends JFrame {
     private String member, question, search;
     private Map<String, Integer> memberMap = namePage.memberMap;
     private Map<String, String> questionMap = questionPage.questionMap;
-    private List<String> memberList = new ArrayList<>();
-    private List<String> questionList = new ArrayList<>(questionMap.keySet());
-    private final int cnt = questionMap.size() / memberMap.size();
-    private final int cntElse = questionMap.size() % memberMap.size();
+    private LinkedList<String> memberList = randomQuiz.randomMember(memberMap, questionMap);
+    private LinkedList<String> questionList = randomQuiz.randomQuestion(questionMap);
 
     // event 등록하는 함수
     private ActionListener action = new action();
@@ -71,30 +65,10 @@ public class quizPage extends JFrame {
         }
     }
 
-    public void randomQuiz() {
-        Iterator<String> memberKeys = memberMap.keySet().iterator();
-        while (memberKeys.hasNext()) {
-            String memberkey = memberKeys.next();
-            for (int i = 0; i < cnt; i++) {
-                memberList.add(memberkey);
-            }
-        }
-        for (int j = 0; j < cntElse; j++) {
-            String[] memberArray = memberMap.keySet().toArray(new String[memberMap.size()]);
-            String randomMember = memberArray[new Random().nextInt(memberArray.length)];
-            memberList.add(randomMember);
-        }
-        Collections.shuffle(memberList);
-        Collections.shuffle(questionList);
-    }
-
     public void nextQuiz() {
-        member = memberList.get(0);
-        memberList.remove(0);
-
-        question = questionList.get(0);
+        member = memberList.poll();
+        question = questionList.poll();
         search = questionMap.get(question);
-        questionList.remove(0);
     }
 
     public quizPage() {
@@ -104,7 +78,6 @@ public class quizPage extends JFrame {
         panel.setLayout(gbl);
 
         // 자식 컴포넌트
-        randomQuiz();
         nextQuiz();
         player = new JLabel(member + " 차례입니다");
         gbc[0] = new GridBagConstraints();

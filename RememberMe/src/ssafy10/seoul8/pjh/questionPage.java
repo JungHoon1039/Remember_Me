@@ -14,19 +14,20 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class questionPage extends JFrame {
-    private JFrame frm = RememberMe.frm;
     public static Map<String, String> questionMap = new HashMap<>();
+    private JFrame frm = RememberMe.frm;
     private JTextField field;
     private JLabel insert, result;
     private JPanel panel;
     private JButton button, next;
-    private String text;
-    private int cnt = 0;
 
     // event 등록하는 함수
     private ActionListener action = new action();
 
     class action implements ActionListener {
+        private String text;
+        private int cnt = 0;
+
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == button) {

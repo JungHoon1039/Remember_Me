@@ -14,19 +14,20 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class namePage extends JFrame {
-    private JFrame frm = RememberMe.frm;
     public static Map<String, Integer> memberMap = new HashMap<>();
+    private JFrame frm = RememberMe.frm;
     private JTextField field;
     private JLabel insert, result;
     private JPanel panel;
     private JButton button, next;
-    private String text;
-    private int cnt = 1;
 
     // event 등록하는 함수
     private ActionListener action = new action();
 
     class action implements ActionListener {
+        private String text;
+        private int cnt = 1;
+
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == button) {
@@ -63,7 +64,7 @@ public class namePage extends JFrame {
         panel.setLayout(gbl);
 
         // 자식 컴포넌트
-        insert = new JLabel("플레이어 " + cnt + " 이름을 입력하세요");
+        insert = new JLabel("플레이어 1 이름을 입력하세요");
         gbc[0] = new GridBagConstraints();
         gbc[0].gridx = 0;
         gbc[0].gridy = 0;

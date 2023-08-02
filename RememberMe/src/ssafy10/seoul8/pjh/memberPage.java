@@ -12,18 +12,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class memberPage extends JFrame {
-    private JFrame frm = RememberMe.frm;
     public static int member = 0;
+    private JFrame frm = RememberMe.frm;
     private JTextField field;
     private JLabel insert, result;
     private JPanel panel;
     private JButton button, next;
-    private String text;
 
     // event 등록하는 함수
     private ActionListener action = new action();
 
     class action implements ActionListener {
+        private String text;
+
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == button) {
