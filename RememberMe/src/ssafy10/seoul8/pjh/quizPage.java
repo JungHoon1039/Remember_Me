@@ -16,7 +16,7 @@ public class quizPage extends JFrame {
     private JLabel player, quiz, answer;
     private JPanel panel;
     private JButton check, collect, wrong, next;
-    JFrame frm = startPage.frm;
+    JFrame frm = RememberMe.frm;
     String text, member, question, search;
     Map<String, Integer> memberMap = namePage.memberMap;
     Map<String, String> questionMap = questionPage.questionMap;
@@ -33,22 +33,22 @@ public class quizPage extends JFrame {
                 }
             } else if (e.getSource() == collect) {
                 if (questionMap.size() > 0) {
-                    memberMap.put(member, memberMap.get(member)+1);
+                    memberMap.put(member, memberMap.get(member) + 1);
                     randomMember();
                     player.setText(member + " 차례입니다");
                     randomQuestion();
                     quiz.setText(question);
                     answer.setText("");
                 } else if (questionMap.size() == 0 && question != null && search != null) {
-                    memberMap.put(member, memberMap.get(member)+1);
+                    memberMap.put(member, memberMap.get(member) + 1);
                     player.setText("모든 문제가 종료 되었습니다");
                     question = null;
                     search = null;
                     quiz.setText("");
                     answer.setText("");
-                    
+
                 }
-                
+
             } else if (e.getSource() == wrong) {
                 if (questionMap.size() > 0) {
                     randomMember();
@@ -62,19 +62,19 @@ public class quizPage extends JFrame {
                     search = null;
                     quiz.setText("");
                     answer.setText("");
-                }            
+                }
             } else if (e.getSource() == next) {
                 new resultPage();
             }
         }
     }
-    
+
     public void randomMember() {
         String[] memberKeys = memberMap.keySet().toArray(new String[memberMap.size()]);
         String randomMember = memberKeys[new Random().nextInt(memberKeys.length)];
         member = randomMember;
     }
-    
+
     public void randomQuestion() {
         String[] questionKeys = questionMap.keySet().toArray(new String[questionMap.size()]);
         String randomQuestion = questionKeys[new Random().nextInt(questionKeys.length)];
@@ -88,7 +88,7 @@ public class quizPage extends JFrame {
         GridBagLayout gbl = new GridBagLayout();
         panel = new JPanel();
         panel.setLayout(gbl);
-        
+
         // 자식 컴포넌트
         randomMember();
         player = new JLabel(member + " 차례입니다");
@@ -97,7 +97,7 @@ public class quizPage extends JFrame {
         gbc[0].gridy = 0;
         gbc[0].gridwidth = 2;
         panel.add(player, gbc[0]);
-        
+
         randomQuestion();
         quiz = new JLabel(question);
         gbc[1] = new GridBagConstraints();
@@ -135,7 +135,7 @@ public class quizPage extends JFrame {
         gbc[5].gridy = 4;
         gbc[5].gridwidth = 2;
         panel.add(next, gbc[5]);
-        
+
         answer = new JLabel("");
         gbc[6] = new GridBagConstraints();
         gbc[6].gridx = 0;

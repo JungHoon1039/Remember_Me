@@ -11,10 +11,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class startPage extends JFrame {
+    JFrame frm = RememberMe.frm;
     private JLabel insert;
     private JPanel panel;
     private JButton next;
-    static JFrame frm;
     String text;
 
     // event 등록하는 함수
@@ -30,17 +30,6 @@ public class startPage extends JFrame {
     }
 
     public startPage() {
-        // 부모 프레임 생성
-        frm = new JFrame("layout");
-        // 부모 프레임 타이틀 설정
-        frm.setTitle("RememberMe");
-        // 부모 프레임 사이즈 설정
-        frm.setSize(300, 300);
-        // 부모 프레임을 화면 가운데 배치
-        frm.setLocationRelativeTo(null);
-        // 부모 프레임을 닫으면 메모리에서 제거 되도록 (프로그램 종료 하도록) 설정
-        frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // 레이아웃
         GridBagConstraints[] gbc = new GridBagConstraints[2]; // 컴포넌트
         GridBagLayout gbl = new GridBagLayout();
         panel = new JPanel();

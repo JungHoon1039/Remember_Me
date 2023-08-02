@@ -19,7 +19,7 @@ public class namePage extends JFrame {
     private JLabel insert, result;
     private JPanel panel;
     private JButton button, next;
-    JFrame frm = startPage.frm;
+    JFrame frm = RememberMe.frm;
     String text;
     private int cnt = 1;
 

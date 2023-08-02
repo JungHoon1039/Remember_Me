@@ -17,7 +17,7 @@ public class memberPage extends JFrame {
     private JLabel insert, result;
     private JPanel panel;
     private JButton button, next;
-    JFrame frm = startPage.frm;
+    JFrame frm = RememberMe.frm;
     String text;
 
     // event 등록하는 함수
