@@ -12,13 +12,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class memberPage extends JFrame {
-    static int member = 0;
+    public static int member = 0;
     private JTextField field;
     private JLabel insert, result;
     private JPanel panel;
     private JButton button, next;
-    JFrame frm = RememberMe.frm;
-    String text;
+    private JFrame frm = RememberMe.frm;
+    private String text;
 
     // event 등록하는 함수
     private ActionListener action = new action();

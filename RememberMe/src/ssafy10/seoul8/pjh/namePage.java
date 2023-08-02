@@ -14,13 +14,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class namePage extends JFrame {
-    static Map<String, Integer> memberMap = new HashMap<>();
+    public static Map<String, Integer> memberMap = new HashMap<>();
     private JTextField field;
     private JLabel insert, result;
     private JPanel panel;
     private JButton button, next;
-    JFrame frm = RememberMe.frm;
-    String text;
+    private JFrame frm = RememberMe.frm;
+    private String text;
     private int cnt = 1;
 
     // event 등록하는 함수

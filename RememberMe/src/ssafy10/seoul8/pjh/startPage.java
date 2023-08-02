@@ -15,7 +15,6 @@ public class startPage extends JFrame {
     private JLabel insert;
     private JPanel panel;
     private JButton next;
-    String text;
 
     // event 등록하는 함수
     private ActionListener action = new action();

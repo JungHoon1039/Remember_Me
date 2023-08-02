@@ -16,10 +16,10 @@ public class quizPage extends JFrame {
     private JLabel player, quiz, answer;
     private JPanel panel;
     private JButton check, collect, wrong, next;
-    JFrame frm = RememberMe.frm;
-    String text, member, question, search;
-    Map<String, Integer> memberMap = namePage.memberMap;
-    Map<String, String> questionMap = questionPage.questionMap;
+    private String member, question, search;
+    private JFrame frm = RememberMe.frm;
+    private Map<String, Integer> memberMap = namePage.memberMap;
+    private Map<String, String> questionMap = questionPage.questionMap;
 
     // event 등록하는 함수
     private ActionListener action = new action();
@@ -28,22 +28,20 @@ public class quizPage extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == check) {
-                if (questionMap.size() >= 0 && question != null && search != null) {
+                if (questionMap.size() >= 0 && member != null) {
                     answer.setText(search);
                 }
             } else if (e.getSource() == collect) {
                 if (questionMap.size() > 0) {
                     memberMap.put(member, memberMap.get(member) + 1);
-                    randomMember();
+                    randomQuiz();
                     player.setText(member + " 차례입니다");
-                    randomQuestion();
                     quiz.setText(question);
                     answer.setText("");
-                } else if (questionMap.size() == 0 && question != null && search != null) {
+                } else if (questionMap.size() == 0 && member != null) {
                     memberMap.put(member, memberMap.get(member) + 1);
+                    member = null;
                     player.setText("모든 문제가 종료 되었습니다");
-                    question = null;
-                    search = null;
                     quiz.setText("");
                     answer.setText("");
 
@@ -51,15 +49,13 @@ public class quizPage extends JFrame {
 
             } else if (e.getSource() == wrong) {
                 if (questionMap.size() > 0) {
-                    randomMember();
+                    randomQuiz();
                     player.setText(member + " 차례입니다");
-                    randomQuestion();
                     quiz.setText(question);
                     answer.setText("");
-                } else if (questionMap.size() == 0 && question != null && search != null) {
+                } else if (questionMap.size() == 0 && member != null) {
+                    member = null;
                     player.setText("모든 문제가 종료 되었습니다");
-                    question = null;
-                    search = null;
                     quiz.setText("");
                     answer.setText("");
                 }
@@ -69,13 +65,11 @@ public class quizPage extends JFrame {
         }
     }
 
-    public void randomMember() {
+    public void randomQuiz() {
         String[] memberKeys = memberMap.keySet().toArray(new String[memberMap.size()]);
         String randomMember = memberKeys[new Random().nextInt(memberKeys.length)];
         member = randomMember;
-    }
 
-    public void randomQuestion() {
         String[] questionKeys = questionMap.keySet().toArray(new String[questionMap.size()]);
         String randomQuestion = questionKeys[new Random().nextInt(questionKeys.length)];
         question = randomQuestion;
@@ -90,7 +84,7 @@ public class quizPage extends JFrame {
         panel.setLayout(gbl);
 
         // 자식 컴포넌트
-        randomMember();
+        randomQuiz();
         player = new JLabel(member + " 차례입니다");
         gbc[0] = new GridBagConstraints();
         gbc[0].gridx = 0;
@@ -98,7 +92,6 @@ public class quizPage extends JFrame {
         gbc[0].gridwidth = 2;
         panel.add(player, gbc[0]);
 
-        randomQuestion();
         quiz = new JLabel(question);
         gbc[1] = new GridBagConstraints();
         gbc[1].gridx = 0;

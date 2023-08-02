@@ -7,7 +7,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -15,10 +14,8 @@ import javax.swing.JPanel;
 public class resultPage extends JFrame {
     private JLabel result;
     private JPanel panel;
-    private JButton next;
-    JFrame frm = RememberMe.frm;
-    String text;
-    Map<String, Integer> memberMap = namePage.memberMap;
+    private JFrame frm = RememberMe.frm;
+    private Map<String, Integer> memberMap = namePage.memberMap;
 
     public resultPage() {
         GridBagConstraints[] gbc = new GridBagConstraints[1]; // 컴포넌트
