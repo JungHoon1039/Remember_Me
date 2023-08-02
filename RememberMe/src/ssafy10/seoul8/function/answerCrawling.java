@@ -19,7 +19,16 @@ public class answerCrawling {
             if (elements.text().equals("")) { // 선택자가 없는 경우
                 answer = "검색 결과가 없습니다"; // 검색 결과 없음
             } else { // 선택자가 있는 경우
-                answer = elements.text(); // 검색 결과를 문자열로 저장
+                answer = "<html>";
+                int line_num = 20; // 한줄에 들어갈 최대 글자 수
+                int line = elements.text().length() / line_num; // 줄 수
+                for (int i = 0; i < line; i++) { // 줄 수 만큼 최대 글자 할당 하여 줄바꿈 태그와 함께 추가
+                    answer += elements.text().substring(i * line_num, (i + 1) * line_num);
+                    answer += "<br>";
+                }
+                // 나머지 글자 추가
+                answer += elements.text().substring(line * line_num);
+                answer += "</html>";
             }
         } catch (Exception e) {
             System.out.println("크롤링 실패 : " + e);

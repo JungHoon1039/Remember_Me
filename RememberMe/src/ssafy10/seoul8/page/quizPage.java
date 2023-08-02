@@ -92,15 +92,15 @@ public class quizPage extends JFrame {
 
         // 프레임에 들어가는 컴포넌트 별로 속성을 설정하고 panel에 추가한다
         // 이전에 생성한 gbc 배열에서 각 엘리먼트마다 컴포넌트의 grid 정보를 담게 된다
-        nextQuiz();
-        player = new JLabel(member + " 차례입니다");
+
+        player = new JLabel("");
         gbc[0] = new GridBagConstraints();
         gbc[0].gridx = 0;
         gbc[0].gridy = 0;
         gbc[0].gridwidth = 2;
         panel.add(player, gbc[0]);
 
-        quiz = new JLabel(question);
+        quiz = new JLabel("");
         gbc[1] = new GridBagConstraints();
         gbc[1].gridx = 0;
         gbc[1].gridy = 1;
@@ -144,6 +144,7 @@ public class quizPage extends JFrame {
         gbc[6].gridwidth = 2;
         panel.add(answer, gbc[6]);
 
+        nextQuiz(); // 첫 문제 할당
         // 프레임에 페이지의 컴포넌트들을 담은 panel을 세팅하고
         frm.setContentPane(panel);
         // 프레임이 보이도록 설정
