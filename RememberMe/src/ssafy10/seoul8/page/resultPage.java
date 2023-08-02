@@ -11,6 +11,10 @@ import ssafy10.seoul8.function.scoreBoard;
 import ssafy10.seoul8.startframe.RememberMe;
 
 public class resultPage extends JFrame {
+    /**
+     * 리맴버미 프로그램 결과 페이지 구현 클래스 - 페이지 전용 패키지로 관리
+     */
+    private static final long serialVersionUID = 10089311100006L;
     private JFrame frm = RememberMe.frm; // 초기 생성 된 프레임에 페이지 게시
     private JLabel result;
     private JPanel panel;

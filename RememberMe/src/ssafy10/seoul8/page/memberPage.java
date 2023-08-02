@@ -14,6 +14,10 @@ import javax.swing.JTextField;
 import ssafy10.seoul8.startframe.RememberMe;
 
 public class memberPage extends JFrame {
+    /**
+     * 리맴버미 프로그램 플레이어 수 설정 페이지 구현 클래스 - 페이지 전용 패키지로 관리
+     */
+    private static final long serialVersionUID = 10089311100002L;
     public static int member = 0; // 등록 할 플레이어 수 - 다른 클래스에서 접근 가능하도록 설정
     private JFrame frm = RememberMe.frm; // 초기 생성 된 프레임에 페이지 게시
     private JTextField field;

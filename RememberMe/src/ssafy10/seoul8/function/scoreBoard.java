@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class scoreBoard {
+    /**
+     * 최종 결과와 관련 된 클래스 - 기능 전용 패키지로 관리
+     */
     // 최종 결과를 점수판 형식으로 리턴하는 메소드
     public static String result(Map<String, Integer> memberMap) { // memberMap을 파라미터로 받아
         List<String> memberList = new ArrayList<>(memberMap.keySet()); // memberMap의 key(플레이어 이름)을 리스트로 만듬

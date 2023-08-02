@@ -7,6 +7,9 @@ import java.util.Map;
 import java.util.Random;
 
 public class randomQuiz {
+    /**
+     * 랜덤화 하는 것과 관련 된 클래스 - 기능 전용 패키지로 관리
+     */
     // 퀴즈 목록을 랜덤하게 설정한 리스트로 리턴하는 메소드
     public static LinkedList<String> randomQuestion(Map<String, String> questionMap) { // questionMap을 파라미터로 받아
         LinkedList<String> questionList = new LinkedList<>(questionMap.keySet()); // key(문제)로 리스트를 만듬

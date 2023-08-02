@@ -17,6 +17,10 @@ import ssafy10.seoul8.function.answerCrawling;
 import ssafy10.seoul8.startframe.RememberMe;
 
 public class questionPage extends JFrame {
+    /**
+     * 리맴버미 프로그램 문제 입력 페이지 구현 클래스 - 페이지 전용 패키지로 관리
+     */
+    private static final long serialVersionUID = 10089311100004L;
     public static Map<String, String> questionMap = new HashMap<>(); // key : 문제 - value : 정답 형식으로 Map 생성, 다른 클래스에서 접근 가능하도록 설정
     private JFrame frm = RememberMe.frm; // 초기 생성 된 프레임에 페이지 게시
     private JTextField field;

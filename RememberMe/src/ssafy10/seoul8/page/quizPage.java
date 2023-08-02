@@ -16,6 +16,10 @@ import ssafy10.seoul8.function.randomQuiz;
 import ssafy10.seoul8.startframe.RememberMe;
 
 public class quizPage extends JFrame {
+    /**
+     * 리맴버미 프로그램 퀴즈 풀이 페이지 구현 클래스 - 페이지 전용 패키지로 관리
+     */
+    private static final long serialVersionUID = 10089311100005L;
     private JFrame frm = RememberMe.frm; // 초기 생성 된 프레임에 페이지 게시
     private JLabel player, quiz, answer;
     private JPanel panel;

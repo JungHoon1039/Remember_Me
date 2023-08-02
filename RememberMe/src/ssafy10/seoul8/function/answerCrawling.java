@@ -5,6 +5,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 public class answerCrawling {
+    /**
+     * 크롤링과 관련된 클래스 - 기능 전용 패키지로 관리
+     */
     // 입력 된 값의 설명을 검색하여 문자열로 리턴하는 메소드
     public static String searchGoogle(String word) {
         String answer = null; // 리턴값 초기화

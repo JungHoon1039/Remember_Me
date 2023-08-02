@@ -5,6 +5,10 @@ import javax.swing.JFrame;
 import ssafy10.seoul8.page.startPage;
 
 public class RememberMe extends JFrame {
+    /**
+     * 리맴버미 프로그램을 시작하는 클래스 - 독립 패키지로 관리
+     */
+    private static final long serialVersionUID = 10089311101000L;
     public static JFrame frm;
 
     public static void main(String[] args) {

@@ -16,6 +16,10 @@ import javax.swing.JTextField;
 import ssafy10.seoul8.startframe.RememberMe;
 
 public class namePage extends JFrame {
+    /**
+     * 리맴버미 프로그램 플레이어 이름 설정 페이지 구현 클래스 - 페이지 전용 패키지로 관리
+     */
+    private static final long serialVersionUID = 10089311100003L;
     public static Map<String, Integer> memberMap = new HashMap<>(); // key : 플레이어 - value : 점수 형식으로 Map 생성, 다른 클래스에서 접근 가능하도록 설정
     private JFrame frm = RememberMe.frm; // 초기 생성 된 프레임에 페이지 게시
     private JTextField field;
