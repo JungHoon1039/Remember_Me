@@ -1,4 +1,4 @@
-package ssafy10.seoul8.pjh;
+package ssafy10.seoul8.page;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -13,8 +13,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class questionPage extends JFrame {
-    public static Map<String, String> questionMap = new HashMap<>();
+import ssafy10.seoul8.startframe.RememberMe;
+
+public class namePage extends JFrame {
+    public static Map<String, Integer> memberMap = new HashMap<>();
     private JFrame frm = RememberMe.frm;
     private JTextField field;
     private JLabel insert, result;
@@ -26,36 +28,45 @@ public class questionPage extends JFrame {
 
     class action implements ActionListener {
         private String text;
-        private int cnt = 0;
+        private int cnt = 1;
 
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == button) {
-                text = String.valueOf(field.getText());
-                if (questionMap.containsKey(text)) {
-                    result.setText("동일한 문제는 입력 불가");
+                if (cnt <= memberPage.member) {
+                    text = String.valueOf(field.getText());
+                    if (memberMap.containsKey(text)) {
+                        result.setText("동일한 이름은 입력 불가");
+                    } else {
+                        memberMap.put(text, 0);
+                        result.setText("플레이어 " + cnt++ + " 등록 완료");
+                        if (cnt <= memberPage.member) {
+                            insert.setText("플레이어 " + cnt + " 이름을 입력하세요");
+                        } else {
+                            insert.setText("모든 플레이어 등록 완료");
+                        }
+                    }
                 } else {
-                    questionMap.put(text, answerCrawling.searchGoogle(text));
-                    result.setText("문제 개수 : " + ++cnt + "개");
+                    result.setText("모든 플레이어가 등록 되었습니다");
                 }
             } else if (e.getSource() == next) {
-                if (cnt != 0) {
-                    new quizPage();
+                if (memberMap.size() == memberPage.member) {
+                    new questionPage();
                 } else {
-                    result.setText("문제가 0개 입니다");
+                    result.setText("등록 되지 않은 플레이어가 있습니다");
                 }
             }
         }
     }
 
-    public questionPage() {
+    public namePage() {
         GridBagConstraints[] gbc = new GridBagConstraints[5]; // 컴포넌트
         GridBagLayout gbl = new GridBagLayout();
         panel = new JPanel();
         panel.setLayout(gbl);
 
         // 자식 컴포넌트
-        insert = new JLabel("단어를 입력하세요");
+        insert = new JLabel("플레이어 1 이름을 입력하세요");
         gbc[0] = new GridBagConstraints();
         gbc[0].gridx = 0;
         gbc[0].gridy = 0;
@@ -76,7 +87,7 @@ public class questionPage extends JFrame {
         gbc[2].gridy = 1;
         panel.add(button, gbc[2]);
 
-        result = new JLabel("문제 개수 : 0개");
+        result = new JLabel("");
         gbc[3] = new GridBagConstraints();
         gbc[3].gridx = 0;
         gbc[3].gridy = 2;

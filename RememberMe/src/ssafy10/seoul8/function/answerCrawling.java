@@ -1,4 +1,4 @@
-package ssafy10.seoul8.pjh;
+package ssafy10.seoul8.function;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

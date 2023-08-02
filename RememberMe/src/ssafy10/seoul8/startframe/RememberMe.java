@@ -1,6 +1,8 @@
-package ssafy10.seoul8.pjh;
+package ssafy10.seoul8.startframe;
 
 import javax.swing.JFrame;
+
+import ssafy10.seoul8.page.startPage;
 
 public class RememberMe extends JFrame {
     public static JFrame frm;

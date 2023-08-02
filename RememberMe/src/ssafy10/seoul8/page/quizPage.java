@@ -1,4 +1,4 @@
-package ssafy10.seoul8.pjh;
+package ssafy10.seoul8.page;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -11,6 +11,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import ssafy10.seoul8.function.randomQuiz;
+import ssafy10.seoul8.startframe.RememberMe;
 
 public class quizPage extends JFrame {
     private JFrame frm = RememberMe.frm;
