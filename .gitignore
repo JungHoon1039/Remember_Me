@@ -1,1 +1,11 @@
-/bin/
+.gitignore
+RememberMe/bin
+RememberMe/.settings
+RememberMe/.classpath
+RememberMe/.project
+.DS_Store
+RememberMe/.DS_Store
+RememberMe/src/.DS_Store
+RememberMe/src/ssafy10/.DS_Store
+RememberMe/src/ssafy10/seoul8/.DS_Store
+RememberMe/src/ssafy10/seoul8/pjh.DS_Store
