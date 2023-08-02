@@ -44,6 +44,7 @@ public class questionPage extends JFrame {
                 } else { // 해당 값이 Map에 없는 경우
                     questionMap.put(text, answerCrawling.searchGoogle(text)); // key:문제 - value:정답 으로 추가
                     result.setText("문제 개수 : " + ++cnt + "개"); // 현재까지 카운트 된 문제 개수 표시
+                    field.setText(""); // 입력 필드 초기화
                 }
             } else if (e.getSource() == next) { // 이벤트 발생 소스가 next 버튼이면
                 if (cnt != 0) { // 문제 개수가 0개가 아닌 경우
