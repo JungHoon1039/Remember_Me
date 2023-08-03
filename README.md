@@ -14,7 +14,7 @@ Swing (GUI)
 JSOUP Library (crawling)  
 
 ## **User Guide**
-1. 시작 버튼 클릭
+1. RememberMe.jar 파일 실행 후 시작 버튼 클릭
 2. 단어 암기에 참여 할 플레이어 숫자 입력 => 다음 버튼 클릭
 3. 각 플레이어의 이름 입력 => 다음 버튼 클릭
 4. 암기할 단어를 입력 => 다음 버튼 클릭
