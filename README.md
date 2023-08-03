@@ -27,4 +27,4 @@ JSOUP Library (crawling)
 ![Flowchart](https://github.com/JungHoon1039/Remember_Me/assets/91243743/5d8b276a-534e-49dd-a0ba-a3ee4802b385)
 
 ## **Improvement Plan**  
-Swing의 Gridbaglayout 대신 Window builder 혹은 JavaFX 적용 해보기  
+Swing(Gridbaglayout) 대신 Window builder 혹은 JavaFX 적용 하여 GUI 구현  
